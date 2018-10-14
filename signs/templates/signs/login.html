@@ -1,0 +1,30 @@
+{% extends 'signs/base.html' %}
+{% load static from staticfiles %}
+
+
+{% block content %}
+
+<div class="container-fluid" style="background:#fff; border-radius:10px;padding:50px 10px;">
+  <div class="row">
+   
+
+    <div class="col-md-4">
+      <h2 class="text-center">Login 지금</h2>
+      <hr>
+     
+        <form method="post">
+             {% csrf_token %}
+             {{ form.as_p}}
+          <input type="submit" value="Login" class="btn btn-outline-success">
+        </form>   
+     
+    </div>
+  </div>
+</div>
+
+
+
+ 
+{% endblock %} 
+
+ 

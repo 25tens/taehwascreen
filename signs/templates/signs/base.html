@@ -1,0 +1,145 @@
+
+{% load staticfiles %}
+
+<!DOCTYPE html >
+
+<html>
+<head>
+    <meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title> </title>
+
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/tstyle.css' %}">
+	<script type="text/javascript" src=""></script>
+
+	<style type="text/css">
+		
+/*@keyframes textAnim {
+  0% {font-size: 80px; fill: white;}
+  10% {font-size: 100px; fill: red;}
+  40% {font-size: 70px; fill: white;}
+  100% {font-size: 80px; fill: white;}
+}*/
+@keyframes textAnim {
+  0% {font-size: 120px; fill: white;}
+  10% {font-size: 140px; fill: red;}
+  40% {font-size: 110px; fill: white;}
+  100% {font-size: 120px; fill: white;}
+}
+
+@-webkit-keyframes textAnim {
+  0% {font-size: 120px; fill: white;}
+  10% {font-size: 140px; fill: red;}
+  40% {font-size: 110px; fill: orange;}
+  100% {font-size: 120px; fill: white;}
+}
+
+text tspan{
+  font-family: Helvetica, Arial;
+  font-weight: 900;
+  animation: textAnim 2s ease infinite;
+  -webkit-animation: textAnim 2s ease infinite;
+  letter-spacing: 24px;
+}
+
+
+#l2 {
+  animation-delay: .1s;
+  -webkit-animation-delay: .1s;
+}
+#l3 {
+  animation-delay: .3s;
+  -webkit-animation-delay: .3s;
+}
+#l4 {
+  animation-delay: .5s;
+  -webkit-animation-delay: .5s;
+}
+ /*@media (min-width: 1366px) { 
+   textAnim {font-size: 150%}
+  }*/
+
+
+ 
+
+  svg{
+  width:100%;
+}
+  
+</style>
+</head>
+<body>
+	<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'post_list' %}">
+            <i class="fas fa-door-open"></i> &nbsp; &nbsp; 홈 <span class="sr-only">(current)</span></a>
+      </li>
+     
+     
+  
+          {% if user.is_authenticated %}
+          
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span>Hi {{ request.user }} </span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'post_new' %}"><i  class="far fa-edit"></i>&nbsp; &nbsp;event</a>
+            <br><br>
+          <a class="dropdown-item" href="{% url 'user_logout' %}"><i class="far fa-bell-slash"></i>&nbsp; &nbsp;Logout</a>
+        </div>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'user_login' %}"><i class="far fa-bell">&nbsp; &nbsp;</i>Login</a>
+      </li>
+      {% endif %}
+      </ul>  
+  </div>
+</nav>
+	</header>
+
+	
+	
+ {% block content %}
+ 
+	
+		
+	 {% endblock  %}	
+
+<footer>
+</footer>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Text Animation -->
+    <script type="text/javascript">
+    	var spans = document.querySelectorAll("tspan");
+        var i = 0;
+            for (i = 0; i < spans.length; i++) {
+        spans[i].setAttribute("rotate", (10 * Math.random() - 5));
+}
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
