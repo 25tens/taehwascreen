@@ -39,6 +39,13 @@
                      <tspan id="l4">회</tspan>
                 </text>
                </svg>
+               {% for post in post_list %}
+        <div class="" style=""> <a href="{% url 'post_detail' pk=post.pk %}"> 
+          <h1 style="position: initial;color:#fff;font-family: 'Stylish', sans-serif;font-size: 70px; font-weight:900; letter-spacing: .3em;margin-top:-95px;"> {{ post.title }} </h1></a>
+         <!--  </a> <span style="color:#000;font-size: 12px;padding-left: 20px; ">{{ post.published_date }}</span> -->
+         
+        </div>
+  {% endfor %} 
              </div>	
 	
 		</div>  <!-- end row -->
@@ -72,15 +79,13 @@
 		<!-- // HEADER -->
   <header>
  
- {% for post in post_list %}
-        <div> <a href="{% url 'post_detail' pk=post.pk %}"> <h1 style="position: initial;color: #fff;font-family: 'Stylish', sans-serif;font-size: 130px; font-weight:900; letter-spacing: .3em;margin-top:-20px;"> {{ post.title }} </h1></a>
-         <!--  </a> <span style="color:#000;font-size: 12px;padding-left: 20px; ">{{ post.published_date }}</span> -->
-         
-        </div>
-  {% endfor %} 
+ 
   
   </header>
 </section>
+
+
+
 
 <section id="mobile">
 <div class="jumbotron text-center" style="margin-bottom:0;background-color:#fff;">
