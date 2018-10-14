@@ -16,6 +16,8 @@
 
 
 
+
+
 section#accueil {
 	background: #4f83cc;
 	position: relative;
@@ -267,12 +269,3 @@ section#accueil > header {
 	text-align: center;
 }
 
-		section#accueil header > h1 {
-			position: initial;
-			font-family: Arial, sans-serif;
-			color: #000;
-			font-size: 18px;
-			font-weight: 500;
-			letter-spacing: .4em;
-			margin-top: 20px;
-		}
