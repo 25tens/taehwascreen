@@ -27,18 +27,19 @@
       
         <div class="col-12 ">
          <div class="alert alert-primary  text-center" role="alert" style="margin-top:10px;">
-          <h5 class="alert-heading" style="position: initial;color: #000;font-family:  'Nanum Gothic', sans-serif;font-size:70px; font-weight:700; letter-spacing: em;margin-top:px;">어서 오십시요! </h5>
+          <h3 class="alert-heading" style="position: initial;color:red;font-family:  'Nanum Gothic', sans-serif;font-size:50px; font-weight:400; letter-spacing: .5em;margin-top:px;">오늘 뭐가 싸지? </h3>
          
            {% for post in post_list %}
-            <div> <a href="{% url 'post_detail' pk=post.pk %}"><h3> {{ post.title }} </h3></a>
+            <div> <a href="{% url 'post_detail' pk=post.pk %}"><h5 style="position: initial;color:#0000ff;font-family: 'Nanum Gothic', sans-serif;font-size:28px; font-weight:; letter-spacing:.3em;"> {{ post.title }} </h5></a>
             </div>
            {% endfor %} 
         </div>
         </div>
       </div>
+
     </div>
    
-    <div class="col-4 bg-info">
+    <div class="col-4 " style="background-color: #0000ff">
        <svg viewBox="0 0 600 300">
                  <text x="20" y="190" text-anchor="start">
                      <tspan id="l1">태</tspan>
@@ -57,10 +58,22 @@
    <h1> skama  ytrncbs </h1>
 </div>
  -->
-<div class="jump">
-   <h3> 햇멸치 </h3>
-  <div class="fishy"></div>
+ <div class="content">
+  <div class="content__container">
+    
+    
+    <ul class="content__container__list">
+      <li class="content__container__list__item">햇멸치</li>
+      <li class="content__container__list__item">김 미역 다시마</li>
+      <li class="content__container__list__item">북어 황태 </li>
+      <li class="content__container__list__item">오징어</li>
+    </ul>
+  </div>
 </div>
+ <div class="jump">
+  
+  <div class="fishy"></div>
+</div> 
           
   
      
